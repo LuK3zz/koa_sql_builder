@@ -1,9 +1,9 @@
 {
-  "name": "koa_sql_builder",
+  "name": "mssql-builder",
   "version": "1.0.0",
   "main": "dist/index.js",
   "repository": "https://github.com/LuK3zz/koa_sql_builder.git",
-  "author": "LuK3zz",
+  "author": "LuK3zz (Lukáš Venhoda)",
   "license": "MIT",
   "scripts": {
     "build": "tsc"
