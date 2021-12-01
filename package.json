@@ -1,7 +1,7 @@
 {
   "name": "koa_sql_builder",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": "https://github.com/LuK3zz/koa_sql_builder.git",
   "author": "LuK3zz",
   "license": "MIT",
