@@ -16,7 +16,7 @@ export interface IDatabase {
     transaction: mssql.Transaction;
     request: mssql.Request;
 }
-export declare class Database {
+export default class Database {
     private static selectStatement;
     private static innerJoinStatement;
     private static whereStatement;

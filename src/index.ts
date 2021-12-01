@@ -26,7 +26,7 @@ export interface IDatabase {
   request: mssql.Request;
 }
 
-export class Database {
+export default class Database {
   private static selectStatement: string = "";
   private static innerJoinStatement: string = "";
   private static whereStatement: string = "";

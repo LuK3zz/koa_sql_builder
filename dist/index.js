@@ -39,7 +39,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Database = void 0;
 var lodash_1 = require("lodash");
 var msnodesqlv8_1 = __importDefault(require("mssql/msnodesqlv8"));
 var Database = /** @class */ (function () {
@@ -351,4 +350,4 @@ var Database = /** @class */ (function () {
     Database.inputs = [];
     return Database;
 }());
-exports.Database = Database;
+exports.default = Database;
