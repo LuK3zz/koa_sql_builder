@@ -320,7 +320,6 @@ export default class Database {
 
   public static async get<T>() {
     const statement = `${this.selectStatement}${this.innerJoinStatement}${this.whereStatement}${this.orderByStatement}${this.offsetStatement}`;
-    console.log(statement);
     try {
       const response = await this.request.query<T>(statement);
 
