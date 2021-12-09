@@ -321,7 +321,6 @@ var Database = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         statement = "".concat(this.selectStatement).concat(this.innerJoinStatement).concat(this.whereStatement).concat(this.orderByStatement).concat(this.offsetStatement);
-                        console.log(statement);
                         _a.label = 1;
                     case 1:
                         _a.trys.push([1, 3, 4, 5]);
