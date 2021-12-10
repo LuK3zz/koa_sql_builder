@@ -1,6 +1,6 @@
 {
   "name": "mssql-builder",
-  "version": "1.1.0",
+  "version": "2.0.2",
   "main": "dist/index.js",
   "repository": "https://github.com/LuK3zz/mssql-builder.git",
   "author": "LuK3zz (Lukáš Venhoda)",

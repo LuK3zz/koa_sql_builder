@@ -1,4 +1,4 @@
-import { has, isArray, isEmpty, isUndefined, replace, toUpper } from "lodash";
+import { isArray, isEmpty, isUndefined, replace, toUpper } from "lodash";
 import mssql from "mssql/msnodesqlv8";
 
 type Equivalent = "=" | "<" | ">";
@@ -75,6 +75,10 @@ export default class Database {
     this.orderByStatement = "";
     this.tableName = "";
     this.inputs = [];
+
+    if (this.request) {
+      this.request.parameters = {};
+    }
   }
 
   /**
@@ -93,7 +97,7 @@ export default class Database {
 
       this.request.input(key, value);
     } else {
-      this.request.replaceInput(key, value);
+      this.request.input(key, value);
     }
   }
 
@@ -194,9 +198,7 @@ export default class Database {
 
     if (!isEmpty(returnColumnName)) {
       statement += `;SELECT @${returnColumnName} = SCOPE_IDENTITY()`;
-
-      if (!has(this.request.parameters, returnColumnName))
-        this.request.output(returnColumnName, mssql.Int);
+      this.request.output(returnColumnName, mssql.Int);
     }
 
     try {
