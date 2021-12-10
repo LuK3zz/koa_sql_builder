@@ -198,7 +198,7 @@ var Database = /** @class */ (function () {
     Database.insert = function (data, returnColumnName) {
         if (returnColumnName === void 0) { returnColumnName = ""; }
         return __awaiter(this, void 0, void 0, function () {
-            var arrayData, dbKeys, values, statement, e_3;
+            var arrayData, dbKeys, values, statement, response, e_3;
             var _this = this;
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -225,7 +225,10 @@ var Database = /** @class */ (function () {
                     case 1:
                         _a.trys.push([1, 3, 4, 5]);
                         return [4 /*yield*/, this.request.query(statement)];
-                    case 2: return [2 /*return*/, _a.sent()];
+                    case 2:
+                        response = _a.sent();
+                        this.finalize();
+                        return [2 /*return*/, response];
                     case 3:
                         e_3 = _a.sent();
                         // await this.transaction.rollback();

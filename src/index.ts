@@ -202,7 +202,11 @@ export default class Database {
     }
 
     try {
-      return await this.request.query(statement);
+      const response = await this.request.query(statement);
+
+      this.finalize();
+
+      return response;
     } catch (e) {
       // await this.transaction.rollback();
 
