@@ -1,4 +1,4 @@
-import { isArray, isEmpty, isUndefined, replace, toUpper } from "lodash";
+import { has, isArray, isEmpty, isUndefined, replace, toUpper } from "lodash";
 import mssql from "mssql/msnodesqlv8";
 
 type Equivalent = "=" | "<" | ">";
@@ -194,7 +194,9 @@ export default class Database {
 
     if (!isEmpty(returnColumnName)) {
       statement += `;SELECT @${returnColumnName} = SCOPE_IDENTITY()`;
-      this.request.output(returnColumnName, mssql.Int);
+
+      if (!has(this.request.parameters, returnColumnName))
+        this.request.output(returnColumnName, mssql.Int);
     }
 
     try {
