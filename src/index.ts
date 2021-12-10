@@ -75,10 +75,6 @@ export default class Database {
     this.orderByStatement = "";
     this.tableName = "";
     this.inputs = [];
-
-    if (this.request) {
-      this.request.parameters = {};
-    }
   }
 
   /**
@@ -97,7 +93,7 @@ export default class Database {
 
       this.request.input(key, value);
     } else {
-      this.request.input(key, value);
+      this.request.replaceInput(key, value);
     }
   }
 
@@ -202,11 +198,7 @@ export default class Database {
     }
 
     try {
-      const response = await this.request.query(statement);
-
-      this.finalize();
-
-      return response;
+      return await this.request.query(statement);
     } catch (e) {
       // await this.transaction.rollback();
 
